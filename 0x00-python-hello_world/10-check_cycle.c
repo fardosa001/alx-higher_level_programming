@@ -12,6 +12,9 @@ int check_cycle(listint_t *list)
 	listint_t *high = list;
 	listint_t *low = list;
 
+	if (list == NULL)
+		return (0);
+
 	while (1)
 	{
 		if (high->next != NULL && high->next->next != NULL)
