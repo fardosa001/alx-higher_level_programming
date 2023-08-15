@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *tmp = *head;
 	unsigned int nodes, j = 0;
-	int arr[1024];
+	int arr[10240];
 
 	if (head == NULL)
 		return (0);
