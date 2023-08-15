@@ -13,15 +13,12 @@ int is_palindrome(listint_t **head)
 
 	tmp = *head;
 	if (tmp == NULL)
-		return (0);
-	if (*head == NULL)
 		return (1);
-
 	nodes = 0;
 	while (tmp)
 	{
-		nodes += 1;
 		tmp = tmp->next;
+		nodes += 1;
 	}
 	if (nodes == 1)
 		return (1);
@@ -29,12 +26,11 @@ int is_palindrome(listint_t **head)
 	tmp = *head;
 	while (tmp)
 	{
-		arr[j] = tmp->n;
+		arr[j++] = tmp->n;
 		tmp = tmp->next;
-		j++;
 	}
 	j = 0;
-	for (j = 0; j < (nodes / 2); j++)
+	for (j = 0; j <= (nodes / 2); j++)
 	{
 		if (arr[j] != arr[nodes - j - 1])
 			return (0);
