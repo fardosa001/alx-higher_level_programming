@@ -7,13 +7,15 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp;
+	listint_t *tmp = *head;
 	unsigned int nodes, j = 0;
 	int arr[1024];
 
-	tmp = *head;
-	if (tmp == NULL)
+	if (head == NULL)
+		return (0);
+	if (*head == NULL)
 		return (1);
+
 	nodes = 0;
 	while (tmp)
 	{
