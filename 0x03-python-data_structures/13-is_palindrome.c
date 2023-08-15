@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *tmp = *head;
 	unsigned int nodes, j = 0;
-	int arr[10240];
+	int *arr;
 
 	if (head == NULL)
 		return (0);
@@ -25,6 +25,10 @@ int is_palindrome(listint_t **head)
 	if (nodes == 1)
 		return (1);
 
+	arr = malloc(nodes * sizeof(int));
+	if (arr == NULL)
+		return (0);
+
 	tmp = *head;
 	while (tmp)
 	{
@@ -35,7 +39,11 @@ int is_palindrome(listint_t **head)
 	for (j = 0; j <= (nodes / 2); j++)
 	{
 		if (arr[j] != arr[nodes - j - 1])
+		{
+			free(arr);
 			return (0);
+		}
 	}
+	free(arr);
 	return (1);
 }
