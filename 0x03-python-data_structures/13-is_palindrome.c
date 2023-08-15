@@ -38,9 +38,9 @@ int is_palindrome(listint_t **head)
 		{
 			free(arr);
 			return (0);
+			tmp = tmp->next;
 		}
-		tmp = tmp->next;
 	}
-	free(arr);
+		free(arr);
 	return (1);
 }
