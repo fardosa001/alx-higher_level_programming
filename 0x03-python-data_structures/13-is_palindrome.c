@@ -12,10 +12,7 @@ int is_palindrome(listint_t **head)
 	int *arr;
 	int j;
 
-
 	tmp = *head;
-	if (tmp == NULL)
-		return (1);
 
 	nodes = 0;
 	while (tmp != NULL)
