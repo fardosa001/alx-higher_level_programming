@@ -8,43 +8,34 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *tmp;
-	unsigned int nodes;
-	int *arr;
-	int j;
+	unsigned int nodes, j = 0;
+	int arr[1024];
 
 	tmp = *head;
 	if (tmp == NULL)
-		return (0);
-	if (*head == NULL)
 		return (1);
 
 	nodes = 0;
-	while (tmp != NULL)
+	while (tmp)
 	{
-		nodes++;
+		nodes += 1;
 		tmp = tmp->next;
 	}
-
-	arr = malloc(nodes * sizeof(int));
-	if (arr == NULL)
-		return (0);
+	if (nodes == 1)
+		return (1);
 
 	tmp = *head;
-	for (j = 0; tmp != NULL; j++)
+	while (tmp)
 	{
 		arr[j] = tmp->n;
 		tmp = tmp->next;
+		j++;
 	}
-
-	for (j = nodes - 1; tmp != NULL; j--)
+	j = 0;
+	for (j = 0; j < (nodes / 2); j++)
 	{
-		if (tmp->n != arr[j])
-		{
-			free(arr);
+		if (arr[j] != arr[nodes - j - 1])
 			return (0);
-			tmp = tmp->next;
-		}
 	}
-		free(arr);
 	return (1);
 }
