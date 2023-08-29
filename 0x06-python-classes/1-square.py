@@ -5,11 +5,13 @@ Defines a square with a private instance attribute size
 
 
 class Square:
+    """
+    class Square defination
+    """
 
     def __init__(self, size):
         """__init__
-        __init__ method initializes the size value of a Square.
-
+        Initializes square
         Attributes:
             __size(int): size of the square
         """
