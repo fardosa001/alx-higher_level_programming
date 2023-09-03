@@ -1,0 +1,21 @@
+import unittest
+from add_integer import add_integer
+
+class TestAddInteger(unittest.Testcase):
+
+
+	def test_add_integers(self):
+		result = add_integer(1, 2)
+		self.assertEqual(result, 3)
+	
+	def test_add_mixed_types(self):
+		result = add_integer(100.3, -2)
+		self.assertEqual(result, 98)
+
+	def test_add_floats(self):
+		result = add_integer(10.5, 2.5)
+		sef.assertEqual(result, 12)
+		
+	def_test_defualt_value(self):
+		with self.assertRaises(TypeError):
+			add_integer("5", 2)	
