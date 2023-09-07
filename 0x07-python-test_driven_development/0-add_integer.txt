@@ -1,10 +1,16 @@
 "0-add_integer" module
+=====================
 
-Import module:
+"add-integer"
+============
+
+First import 'add-integer' from '0-add_integer' module
+
+------------
+
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
-Test cases:
 
 # a = float, b = float
 >>> add_integer(10.5, 3.5)
