@@ -68,3 +68,14 @@ Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
+# a = None
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# a = int, b = None
+>>> add_integer(10, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
