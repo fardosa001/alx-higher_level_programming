@@ -1,0 +1,17 @@
+===============
+2-matrix_divided module
+================
+
+Import 'matrix_divided from "2-matrix_divided' module:
+
+=============
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# matrix = [[2, 3, 4]], div = int
+>>> matrix_divided([[2, 3, 4]], 2)
+[[1.0, 1.5, 2.0]]
+
+# matrix = [[2, 3, 4]], div = 0
+>>> matrix_divided([[2, 3, 4]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
