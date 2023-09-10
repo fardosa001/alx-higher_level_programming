@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""module 2-rectangle"""
+"""Defines a class rectangle"""
 
 
 class Rectangle:
@@ -15,7 +15,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """width getter"""
+        """Width getter"""
         return self.__width
 
     @width.setter
@@ -29,10 +29,12 @@ class Rectangle:
 
     @property
     def height(self):
+        """Getter"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Height setter to value"""
 
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -43,11 +45,11 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """returns area of a rectangle"""
+        """Returns area of a rectangle"""
         return self.__width * self.__height
 
     def perimeter(self):
-        """returns perimeter of a rectancle"""
+        """Returns perimeter of a rectancle"""
         if self.__width == 0 or self.__height == 0:
             return 0
         else:
