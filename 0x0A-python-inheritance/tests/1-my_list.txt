@@ -4,7 +4,7 @@
 
 >>> MyList = __import__('1-my_list').MyList
 
-# my_list = myList()
+# my_list = MyList()
 my_list.append(1)
 my_list.append(4)
 my_list.append(2)
@@ -12,4 +12,16 @@ my_list.append(2)
 [1, 4, 2]
 >>> my_list.print_sorted()
 [1, 2, 4]
+>>> print(my_list)
+[1, 4, 2]
 
+# next_list = MyList
+next_list.append(100)
+next_list.append(-50)
+next_list.append(50)
+>>> print(next_list)
+[100, -50, 50]
+>>> next_list.print_sorted()
+[-50, 50, 100]
+>>> print(MyList)
+[100, -50, 50]
