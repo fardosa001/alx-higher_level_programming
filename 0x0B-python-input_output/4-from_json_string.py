@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""returns an object (Python data structure) represented by a JSON string""""
+"""returns an object (Python data structure) represented by a JSON string"""
 from json import loads
 
 
