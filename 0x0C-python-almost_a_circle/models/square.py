@@ -31,3 +31,26 @@ class Square(Rectangle):
         """returns [Square] (<id>) <x>/<y> - <size>"""
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
                                                 self.x, self.y, self.size)
+
+    def update(self, *args, **kwargs):
+        """updates rectangle attributes by using args or kwargs"""
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >= 3:
+                self.x = args[2]
+            if len(args) >= 4:
+                self.y = args[3]
+
+        else:
+            for key, val in kwargs.items():
+                if key == 'id':
+                    self.id = val
+                elif key == 'size':
+                    self.size = val
+                elif key == 'x':
+                    self.x = val
+                elif key == 'y':
+                    self.y = val
