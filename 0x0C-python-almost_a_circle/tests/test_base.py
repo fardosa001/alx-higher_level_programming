@@ -11,9 +11,9 @@ from models.square import Square
 class TestBaseclass(unittest.Testcase):
 
     def test_class(self):
-    """base class unittest"""
-    b0 = Base()
-    self.assertIsInstance(b0, base)
+        """base class unittest"""
+        b0 = Base()
+        self.assertIsInstance(b0, base)
 
     def test_base_id(self):
         """unittest for base class ids"""
@@ -34,11 +34,6 @@ class TestBaseclass(unittest.Testcase):
         json_str = Base.to_json_string([r_dict])
         self.assertEqual(json_str, json.dumps([r_dict])
             
-        s = Square(12)
-        s_dict = s.to_dictionary()
-        json_str = base.to_json_string([s_dict])
-        self.asserEqual(json_str, json.dumps([s_dict])
-
     def test_from_json_string(self):
         """test from_json_string"""
         r = rectangle(12, 8, 4, 6)

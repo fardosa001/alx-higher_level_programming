@@ -14,14 +14,14 @@ class Rectangle(Base):
             x: x attribute
             y: y attribute
             id: id
-        
+
         """
         super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-    
+
     @property
     def width(self):
         return self.__width
@@ -50,7 +50,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
-        
+
     @x.setter
     def x(self, value):
         if not isinstance(value, int):
@@ -70,7 +70,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-    
+
     def area(self):
         """returns are of rectangle"""
         return self.__width * self.__height
@@ -79,14 +79,13 @@ class Rectangle(Base):
         """prints in stdout the Rectangle instance with the character #"""
         for row in range(self.__y):
             print()
-        for row in range (self.__height):
+        for row in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
-                                                        self.x, self.y, self.width, self.height)
-    
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+                self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """updates rectangle attributes by using args or kwargs"""
@@ -114,7 +113,7 @@ class Rectangle(Base):
                     self.x = val
                 elif key == 'y':
                     self.y = val
-        
+
     def to_dictionary(self):
         """returns dictionary represantion of rectangle"""
         dic = {}

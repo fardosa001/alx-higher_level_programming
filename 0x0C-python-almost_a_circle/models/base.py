@@ -6,6 +6,7 @@ import json
 class Base:
     """class Base"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """Initializes Base class
         Args:
@@ -17,7 +18,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ returns the JSON string representation of list_dictionaries"""
@@ -25,7 +26,7 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-    
+
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation"""
@@ -33,7 +34,7 @@ class Base:
             return []
         else:
             return json.loads(json_string)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
@@ -42,7 +43,7 @@ class Base:
             for ob in list_objs:
                 objs.append(cls.to_dictionary(ob))
         filename = cls.__name__ + ".json"
-            
+
         with open(filename, 'w') as f:
             f.write(cls.to_json_string(objs))
 
@@ -50,7 +51,7 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
         if cls.__name__ == 'Rectangle':
-            dummy = cls(1,1)
+            dummy = cls(1, 1)
         if cls.__name__ == 'Square':
             dummy = cls(1)
         dummy.update(**dictionary)
