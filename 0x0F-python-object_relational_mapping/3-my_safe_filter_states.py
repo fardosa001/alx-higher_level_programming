@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-"""script that takes in an argument and
-displays all values in the states table
-of hbtn_0e_0_usa where name matches the argument."""
+"""This script takes in an argument and
+displays all values in the states
+where `name` matches the argument
+from the database `hbtn_0e_0_usa`.
+This time the script is safe from
+MySQL injections!"""
 
 import MySQLdb
 from sys import argv
@@ -15,14 +18,14 @@ if __name__ == '__main__':
                          db=argv[3])
     # create cursor to exec queries using SQL, filter names starting with 'N'
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states \
-                    WHERE name LIKE '{}' \
-                    ORDER BY states.id ASC".format(argv[4]))
+    query = "SELECT * FROM states \
+                    WHERE name=%s \
+                    ORDER BY id ASC"
+    cursor.execute(query, (argv[4],))
     rows = cursor.fetchall()
 
     for row in rows:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
 
     cursor.close()
     db.close()
